@@ -5,11 +5,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: aliceblue;
+    background-color: #6d2f00;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
 }
 
 .calculator {
@@ -17,12 +19,47 @@ body {
     background-color: black;
     width: 20rem;
     height: 25rem;
-    grid-template-columns: 1fr;
+    gap: 0.125rem;
+    border: 2px solid black;
+    box-shadow: 0 0.313rem 0.625rem rgb(0 0 0 / 0.2);
+    grid-template-areas:
+    "results results results results"
+    "clear clear backspace divide"
+    "n7 n8 n9 multi"
+    "n4 n5 n6 minus"
+    "n1 n2 n3 plus"
+    "n0 n0 n0 equal";
 }
 
-td {
-    background-color: rgb(172, 172, 172);
+button {
+    background-color: rgb(202, 202, 202);
     text-align: center;
+    cursor: pointer;
+    border: 0;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 2rem;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.877);
+}
+
+button.operator:hover {
+    background-color: rgb(255, 196, 0);
+}
+
+.results {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.results-value {
+    margin: 0;
+    padding: 0 1.25rem;
 }
 
 .operator {
@@ -30,7 +67,73 @@ td {
     color: white;
 }
 
-/*tr:nth-of-type(2) {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.grid-item1 {
+    grid-area: results;
+}
+.grid-item2 {
+    grid-area: clear;
+}
+.grid-item3 {
+    grid-area: backspace;
+}
+.grid-item4 {
+    grid-area: divide;
+}
+.grid-item5 {
+    grid-area: n7;
+}
+.grid-item6 {
+    grid-area: n8;
+}
+.grid-item7 {
+    grid-area: n9;
+}
+.grid-item8 {
+    grid-area: multi;
+}
+.grid-item9 {
+    grid-area: n4;
+}
+.grid-item10 {
+    grid-area: n5;
+}
+.grid-item11 {
+    grid-area: n6;
+}
+.grid-item12 {
+    grid-area: minus;
+}
+.grid-item13 {
+    grid-area: n1;
+}
+.grid-item14 {
+    grid-area: n2;
+}
+.grid-item15 {
+    grid-area: n3;
+}
+.grid-item16 {
+    grid-area: plus;
+}
+.grid-item17 {
+    grid-area: n0;
+}
+.grid-item18 {
+    grid-area: equal;
+}
+
