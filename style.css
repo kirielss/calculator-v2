@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #6d2f00;
+    background-color: #272727;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.877);
 }
 
-button.operator:hover {
+button.operator:hover, button.equals:hover {
     background-color: rgb(255, 196, 0);
 }
 
@@ -62,7 +62,7 @@ button.operator:hover {
     padding: 0 1.25rem;
 }
 
-.operator {
+.operator, .equals {
     background-color: orange;
     color: white;
 }
