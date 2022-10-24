@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: grid;
+    background-color: black;
+    width: 20rem;
+    height: 25rem;
+    grid-template-columns: 1fr;
+}
+
+td {
+    background-color: rgb(172, 172, 172);
+    text-align: center;
+}
+
+.operator {
+    background-color: orange;
+    color: white;
+}
+
+/*tr:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}*/
