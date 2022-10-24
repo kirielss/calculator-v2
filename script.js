@@ -10,10 +10,17 @@ input.addEventListener("click", function (event) {
     if (event.target.classList.contains('num')) {
 
         // Condição para apagar o display ao digitar um novo número
-        if ((output.innerText == 0) || (typeof(operation) === 'string')) {
+        if (output.innerText == 0) {
             output.innerText = '';
         };
+
+        // Condição para limitar o número de caracteres digitados na calculadora
+        if (output.innerText.length < 10) {
         output.innerText = output.innerText + event.target.innerText;
+        }
+        else {
+            output.innerText = output.innerText.slice(1) + event.target.innerText;
+        }
     }
 
     // Clicando no C (limpar)
