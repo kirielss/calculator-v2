@@ -2,6 +2,7 @@ const input = document.querySelector('.calculator');
 const output = document.querySelector('.results-value');
 let num;
 let operation;
+let result;
 
 // Evento para escutar o click na calculadora
 input.addEventListener("click", function (event) {
@@ -10,8 +11,9 @@ input.addEventListener("click", function (event) {
     if (event.target.classList.contains('num')) {
 
         // Condição para apagar o display ao digitar um novo número
-        if (output.innerText == 0) {
+        if ((output.innerText == 0) || (result > 0 )) {
             output.innerText = '';
+            result = 0;
         };
 
         // Condição para limitar o número de caracteres digitados na calculadora
@@ -40,7 +42,8 @@ input.addEventListener("click", function (event) {
 
         // Checa se já foi solicitada uma operação antes, caso sim já imprime o valor na tela
         if (typeof(operation) === 'string') {
-            output.innerText = calcul(num,output.innerText,operation);
+            result = calcul(num,output.innerText,operation);
+            output.innerText = result;
             num = parseInt(output.innerText);
         }
         else {
@@ -52,9 +55,11 @@ input.addEventListener("click", function (event) {
 
     // Clicando no pedido pelo resultado, invoca a função calculadora e imprime na tela
     else if (event.target.classList.contains('equals')) {
-        output.innerText = calcul(num,output.innerText,operation);
+        result = calcul(num,output.innerText,operation);
+        output.innerText = result;
+        num = 0;
+        operation = 0;
     }
-
 });
 
 // Função calculadora
