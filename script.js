@@ -11,7 +11,7 @@ input.addEventListener("click", function (event) {
     if (event.target.classList.contains('num')) {
 
         // Condição para apagar o display ao digitar um novo número
-        if ((output.innerText == 0) || (result > 0 )) {
+        if ((output.innerText == 0) || (result !== 0 )) {
             output.innerText = '';
             result = 0;
         };
